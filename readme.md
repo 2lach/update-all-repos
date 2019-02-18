@@ -1,31 +1,22 @@
-<p align="center">
-	<h2>Get all your repos up to date</h2>
-	<br>
-	<br>
-</p>
+# Get all your repos up to date
 
 > Automate the chore of keeping your workspace up to date.
-
 
 ## Highlights
 
 - Update all the repos in your workspace
 
-
 ## Install
 
-```
 For this script to work, you need to have bash and git installed
 
 (Only tested on mac)
-```
-
 
 ## API
 
 none, run as is from workspace root
 
-#### How it works
+### How it works
 
 Place the script named get-all-updates.sh in the workspace root.
 run it.
@@ -36,8 +27,9 @@ If it it, it will check is the current branch master.
 If that also is true, it will do a git pull origin master.
 then exit the folder and do the same in the next folder.
 
-### Overview:
+### Overview
 
+<!-- markdownlint-disable -->
 ```Zsh
 workspace root
 ├── Project
@@ -62,14 +54,9 @@ workspace root
 		- Exit folder
 ```
 
-
-
-
-
 ## Maintainers
 
 - [Stefan Lachmann](https://github.com/2lach)
-
 
 ## License
 

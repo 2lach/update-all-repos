@@ -31,34 +31,34 @@ F_NAME="${folders[$i]}"
 
 if test -d "${F_NAME}"
 then
-echo -e "${Cyan}Stepping into: ${F_NAME}/"
+echo "${Cyan}Stepping into: ${F_NAME}/"
     echo " "
     cd $F_NAME
     if [ -d ".git/" ]; then 
-        echo -e "${LightGreen}Git repo found"
+        echo "${LightGreen}Git repo found"
         BRANCH=$(git rev-parse --abbrev-ref HEAD)
         if [[ "$BRANCH" == "master" ]]; then
-        echo -e "${LightGreen}The current bransch is master${NC}"
+        echo "${LightGreen}The current bransch is master${NC}"
 
-        echo -e "${BrownOrange}Doing a git pull${NC}"
+        echo "${BrownOrange}Doing a git pull${NC}"
         git pull origin master
-        echo -e "${LightGreen}Completed"
+        echo "${LightGreen}Completed"
         echo " "
         fi
     elif [[ "$BRANCH" != "master" ]]; then
-        echo -e "${LightPurple}Branch not master${NC}"
+        echo "${LightPurple}Branch not master${NC}"
         echo " "
     fi
     cd ..
-    echo -e "${Cyan}Left directory: ${F_NAME} ${NC}"
+    echo "${Cyan}Left directory: ${F_NAME} ${NC}"
     echo " "
 
 else                                   
-echo -e "found ${F_NAME} doing nada..."
+echo "found ${F_NAME} doing nada..."
 echo " "
 fi
 
 let i++
 done
-echo -e "All repo in: ${folders} have been updated"
+echo "All repo in: ${folders} have been updated"
 
