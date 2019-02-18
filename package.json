@@ -6,7 +6,7 @@
 	"license": "MIT",
 	"repository": "2lach/update-all-repos",
 	"bin": {
-		"gitUpdateAll": "index.js"
+		"update-all-repos": "index.js"
 	},
 	"author": {
 		"name": "Stefan Lachmann",
