@@ -38,7 +38,7 @@ echo -e "${Cyan}Stepping into: ${F_NAME}/"
         echo -e "${LightGreen}Git repo found"
         BRANCH=$(git rev-parse --abbrev-ref HEAD)
         if [[ "$BRANCH" == "master" ]]; then
-        echo -e "${LightGreen}The current bransch is master${NC}"
+        echo -e "${LightGreen}The current branch is master${NC}"
 
         echo -e "${BrownOrange}Doing a git pull${NC}"
         git pull origin master
