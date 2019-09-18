@@ -18,8 +18,8 @@ LightCyan='\033[1;36m'          # LightCyan
 LightGray='\033[0;37m'          # LightGray  
 White='\033[1;37m'              # White 
 
-folders=(`ls`)
 
+folders=(`ls`)
 
 len=${#folders[*]}
 
@@ -60,5 +60,4 @@ fi
 
 let i++
 done
-echo -e "All repo in: ${folders} have been updated"
-
+echo All repos in: $1 have been updated
