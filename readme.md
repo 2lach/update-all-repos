@@ -6,6 +6,7 @@
 
 > Automate the chore of keeping your workspace up to date.
 
+![terminalshot of get all updates in action](https://raw.githubusercontent.com/2lach/update-all-repos/master/screenshot.jpg)
 
 ## Highlights
 
