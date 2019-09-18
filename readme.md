@@ -9,7 +9,7 @@
 
 ## Highlights
 
-- Update all the repos in your workspace
+- Update all the repos in your workspace/s
 
 
 ## Install
