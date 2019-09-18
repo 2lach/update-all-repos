@@ -16,7 +16,6 @@
 
 ```
 For this script to work, you need to have bash, git and the terminal of your choice installed
-
 ```
 
 
