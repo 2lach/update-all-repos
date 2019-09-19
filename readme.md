@@ -79,7 +79,7 @@ your current path
 		- Exit folder
 ```
 Screenshot:
-![terminalshot of get all updates in action](https://raw.githubusercontent.com/2lach/update-all-repos/master/screenshot.jpg)
+![terminalshot of get all updates in action](https://raw.githubusercontent.com/2lach/update-all-repos/master/update-all-repos-screenshot.png)
 
 
 
