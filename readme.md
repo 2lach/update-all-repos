@@ -31,8 +31,7 @@ enter repo and cp script to ~/
 then:
 
 ```BASH
-echo '
-# get all updates git script
+echo '# get all updates git script
 git-update-all(){
 	bash ~/get-all-updates.sh $PWD
 }' >> ./.bashrc
