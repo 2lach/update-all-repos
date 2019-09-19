@@ -25,14 +25,15 @@ none, but the script itself is highly hackable and i've included a bunch of bash
 #### How it works
 
 clone repo
-`git clone https://github.com/2lach/update-all-repos.git`
-enter repo and cp script to ~/
-`cd update-all-repos; cp get-all-updates.sh ~/`
+`git clone https://github.com/2lach/update-all-repos.git`  
+enter repo and cp script to ~/  
+`cd update-all-repos; cp get-all-updates.sh ~/`  
 then:
 
 ```BASH
+echo '
 # get all updates git script
-echo 'git-update-all(){
+git-update-all(){
 	bash ~/get-all-updates.sh $PWD
 }' >> ./.bashrc
 ```
