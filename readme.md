@@ -26,8 +26,9 @@ none, but the script itself is highly hackable and i've included a bunch of bash
 
 clone repo
 `git clone https://github.com/2lach/update-all-repos.git`  
-enter repo and cp script to ~/  
+ and then:  
 `cd update-all-repos; cp get-all-updates.sh ~/`  
+
 then:
 
 ```BASH
