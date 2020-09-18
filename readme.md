@@ -1,5 +1,5 @@
 <p align="center">
-	<h2>Keep all your git repos up to date with one command</h2>
+	<h2>Keep all your local repos and workspaces synced with one command</h2>
 	<br>
 	<br>
 </p>
