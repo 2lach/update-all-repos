@@ -86,5 +86,5 @@ while [ $i -lt "$len" ]; do
 	let i++
 done
 echo "All repos in"
-echo -e "${BrownOrange} $1 ${NC}"
+echo -e "${BrownOrange} $1 || $PWD ${NC}"
 echo "have been updated"
