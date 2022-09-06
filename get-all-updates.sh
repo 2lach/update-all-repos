@@ -29,6 +29,23 @@ command -v git >/dev/null 2>&1 ||
 		exit 1
 	}
 
+# check if gitleaks is installed
+if command -v gitleaks;
+then
+	GITLEAKS_INSTALLED="true"
+else
+ 		echo >&2 "gitleaks is not installed."
+		GITLEAKS_INSTALLED="false"
+fi
+
+function run_gitleaks(){
+	if [ $GITLEAKS_INSTALLED ] 
+	then 
+	gitleaks detect -v > gitleaks_report_"$1"_"$2".txt
+	fi
+
+}
+
 # get folders in current directory
 folders=($(ls))
 
@@ -62,6 +79,8 @@ while [ $i -lt "$len" ]; do
 
 				git fetch
 				git pull
+				# run a secrets-scan with gitleaks (if intstalled) 
+				[ $GITLEAKS_INSTALLED ]  && run_gitleaks "$F_NAME" "$BRANCH"
 
 				echo -e "${LightGreen}Completed ${NC}"
 
@@ -85,6 +104,11 @@ while [ $i -lt "$len" ]; do
 
 	let i++
 done
+		printf "\n----------------------------------------------------------------\n"
+[ ! $GITLEAKS_INSTALLED ]  && echo -e "update-all-repos now includes a secret scanning extension with gitleaks"
+[ ! $GITLEAKS_INSTALLED ]  && echo -e "You can get it here -> https://github.com/zricethezav/gitleaks#getting-started"
+		printf "\n----------------------------------------------------------------\n"
 echo "All repos in"
 echo -e "${BrownOrange} $1 || $PWD ${NC}"
+		GITLEAKS_INSTALLED="false"
 echo "have been updated"

@@ -62,6 +62,19 @@ Now you can update all your repositories, in all your workspaces by running:
 
 - If any of the steps 1-3 is `false` it will exit the the folder and continue with the next.
 
+#### Extension, check for commited secrets
+A secrets check which includes a scan after git update of repository is completed
+The scan is run with the free and opensource tool [gitleaks](https://github.com/zricethezav/gitleaks)
+
+Essentially if gitleaks is installed a 4:th step is included after step 3) when the script will run `git fetch` and `git pull`
+
+4)
+If gitleaks is installed, a file will be created in the repository with the name ´gitleaks_report_foldername_branch.txt` containing the results if any secrets or sensitive infomation is present in the repository.
+5) After the scan is done, the script will exit the folder and repeat the process on the next folder in your current path.
+
+if gitleaks is not installed it will do as before e.g update repositories and move on to the next, that's it.
+
+
 | Demo |
 | ----------- |
 |[get-all-updates](https://github.com/2lach/get-all-updates) ![gitleaks-demo-fast-cropped](./demo.gif)|
