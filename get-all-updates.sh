@@ -29,6 +29,24 @@ command -v git >/dev/null 2>&1 ||
 		exit 1
 	}
 
+# check if gitleaks is installed
+if command -v gitleaks;
+then
+	GITLEAKS_INSTALLED="true"
+else
+ 		echo >&2 "gitleaks is not installed."
+		echo "You can get it here -> https://github.com/zricethezav/gitleaks#getting-started"
+		GITLEAKS_INSTALLED="false"
+fi
+
+function run_gitleaks(){
+	if [ $GITLEAKS_INSTALLED ] 
+	then 
+	gitleaks detect -v > gitleaks_report_"$1"_"$2".txt
+	fi
+
+}
+
 # get folders in current directory
 folders=($(ls))
 
@@ -62,6 +80,8 @@ while [ $i -lt "$len" ]; do
 
 				git fetch
 				git pull
+				# run a secrets-scan with gitleaks (if intstalled) 
+				[ $GITLEAKS_INSTALLED ]  && run_gitleaks "$F_NAME" "$BRANCH"
 
 				echo -e "${LightGreen}Completed ${NC}"
 
