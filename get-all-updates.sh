@@ -7,7 +7,7 @@
 # LightRed='\033[1;31m'    # LightRed
 # Green='\033[0;32m'       # Green
 
-# Yellow='\033[1;33m'      # Yellow
+
 # Blue='\033[0;34m'        # Blue
 # LightGray='\033[0;37m'   # LightGray
 # Purple='\033[0;35m'      # Purple
@@ -20,6 +20,7 @@ BrownOrange='\033[0;33m' # BrownOrange
 LightPurple='\033[1;35m' # LightPurple
 Cyan='\033[0;36m'        # Cyan
 LightCyan='\033[1;36m'   # LightCyan
+Yellow='\033[1;33m'      # Yellow
 
 # Verify that git is installed otherwise exit
 command -v git >/dev/null 2>&1 ||
@@ -74,7 +75,7 @@ while [ $i -lt "$len" ]; do
 
 		cd ..
 
-		echo -e "${Cyan}Left directory: ${F_NAME} ${NC}"
+		echo -e "${Yellow}Left directory: ${White}${F_NAME} ${NC}"
 		printf "\n----------------------------------------------------------------\n\n"
 
 	else
@@ -85,5 +86,5 @@ while [ $i -lt "$len" ]; do
 	let i++
 done
 echo "All repos in"
-echo -e "${BrownOrange} $1 ${NC}"
+echo -e "${BrownOrange} $1 || $PWD ${NC}"
 echo "have been updated"
