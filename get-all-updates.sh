@@ -105,6 +105,11 @@ while [ $i -lt "$len" ]; do
 
 	let i++
 done
+		printf "\n----------------------------------------------------------------\n"
+[ ! $GITLEAKS_INSTALLED ]  && echo -e "update-all-repos now includes a secret scanning extension with gitleaks"
+[ ! $GITLEAKS_INSTALLED ]  && echo -e "You can get it here -> https://github.com/zricethezav/gitleaks#getting-started"
+		printf "\n----------------------------------------------------------------\n"
 echo "All repos in"
 echo -e "${BrownOrange} $1 || $PWD ${NC}"
+		GITLEAKS_INSTALLED="false"
 echo "have been updated"
